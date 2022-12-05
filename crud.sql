@@ -20,6 +20,7 @@ VALUES
 	(6,1),
 	(6,2),
 	(6,6),
+	(6,8),
 	(6,8);
 -- Leitura
 
@@ -53,7 +54,7 @@ UPDATE
 clientes 
 SET
 lealdade = (SELECT 
- round(sum(pr.preço)::NUMERIC,2)  
+ round(sum(pr.pts_de_lealdade)::NUMERIC,2)  
 FROM 
 clientes c 
 JOIN 
@@ -65,9 +66,8 @@ produtos pr ON pr.id = pp.produto_id
 WHERE
 c.nome = 'Georgia'
 GROUP BY	
-c.nome )
-WHERE 
-id=6;
+c.nome ;
+)
 
 
 -- Deleção

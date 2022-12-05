@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS produtos(
 	pedido_id INTEGER NOT NULL,
 	FOREIGN KEY (pedido_id)
 	REFERENCES pedidos(id)
-	ON DELETE SET NULL,
+	ON DELETE CASCADE,
 	produto_id INTEGER NOT NULL,
 	FOREIGN KEY (produto_id)
 	REFERENCES produtos(id)
